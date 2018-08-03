@@ -50,6 +50,7 @@ RUN curl -L https://www.getchef.com/chef/install.sh | bash \
        --json-attributes /var/chef/solo.json \
     && rpm -qa *chef* | xargs rpm -e \
     && rpm --rebuilddb \
+    && yum update -y \
     && rm -rf /etc/chef \
     && rm -rf /opt/chefdk \
     && rm -rf /var/cache/yum \
